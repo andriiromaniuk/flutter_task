@@ -4,7 +4,7 @@ My attempt at test task for Solid Software.
 
 This app changes its background color when you tap on screen anywhere and displays outlined "Hey there!" text on middle of the screen.
 
-## How to setup using Android Studio
+## How to setup project using Android Studio
 Your Android Studio should support Flutter projects, if it does not - install flutter by guide: https://flutter.dev/docs/get-started/install.
 
 1. File -> New -> Project From Version Control...
