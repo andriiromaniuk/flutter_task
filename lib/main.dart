@@ -24,29 +24,51 @@ class _MyAppState extends State<MyApp> {
     return GestureDetector(
         child: MaterialApp(
           home: Scaffold(
-            body: Stack(
-              children: <Widget>[
-                Center(
-                  child: Text(
-                    "Hey there!",
-                    style: TextStyle(
-                      fontSize: 40,
-                      foreground: Paint()
-                        ..style = PaintingStyle.stroke
-                        ..strokeWidth = 2
-                        ..color = Colors.black,
-                    ),
-                  ),
-                ),
-                const Center(
-                  child: Text("Hey there!",
-                      style: TextStyle(fontSize: 40, color: Colors.white)),
-                ),
-              ],
-            ),
+            body: const OutlinedText(text: "Hey there"),
             backgroundColor: _color,
           ),
         ),
         onTap: changeColor);
+  }
+}
+
+class OutlinedText extends StatelessWidget {
+  final String text;
+  final double fontSize;
+  final double strokeWidth;
+  final Color textColor;
+  final Color outlineColor;
+
+  const OutlinedText({
+    Key? key,
+    this.text = "",
+    this.fontSize = 40,
+    this.strokeWidth = 4,
+    this.textColor = Colors.white,
+    this.outlineColor = Colors.black,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: fontSize,
+              foreground: Paint()
+                ..style = PaintingStyle.stroke
+                ..strokeWidth = strokeWidth
+                ..color = outlineColor,
+            ),
+          ),
+        ),
+        Center(
+          child: Text(text,
+              style: TextStyle(fontSize: fontSize, color: textColor)),
+        ),
+      ],
+    );
   }
 }
