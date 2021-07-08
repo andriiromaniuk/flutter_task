@@ -1,2 +1,2 @@
 const int rgbMaxValue = 256;
-const double opacity = 1;
+const int maxAlphaValue = 255;

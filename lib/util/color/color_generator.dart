@@ -8,6 +8,7 @@ class ColorUtil {
     var R = random.nextInt(rgbMaxValue);
     var G = random.nextInt(rgbMaxValue);
     var B = random.nextInt(rgbMaxValue);
+    var opacity = random.nextInt(maxAlphaValue + 1)/maxAlphaValue;
     return Color.fromRGBO(R, G, B, opacity);
   }
 }

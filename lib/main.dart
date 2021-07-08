@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:test_task/util/color/color_generator.dart';
-
 import 'custom.widgets/outlined_text_widget.dart';
 
 void main() {
@@ -16,9 +15,14 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Color _color = Colors.white;
+  int count = 0;
 
   void changeColor() {
     setState(() => _color = ColorUtil.changeColor());
+  }
+
+  void changeCounter() {
+    setState(() => count++);
   }
 
   @override
@@ -26,8 +30,9 @@ class _MyAppState extends State<MyApp> {
     return GestureDetector(
         child: MaterialApp(
           home: Scaffold(
-            body: const OutlinedText(text: "Hey there"),
+            body: OutlinedText(text: "Hey there $count"),
             backgroundColor: _color,
+            floatingActionButton: FloatingActionButton(onPressed: () {changeCounter();},),
           ),
         ),
         onTap: changeColor);
